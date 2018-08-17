@@ -1,0 +1,269 @@
+:root {
+  --font-color: #f65;
+  --font-color-light: #f54b;
+  --background-color: #333;
+}
+
+div {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0px 5px;
+  background-color: var(--background-color);
+  font-family: Montserrat, "Segoe UI Light", "Open Sans", Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  color: var(--font-color);
+}
+
+#form-description {
+  text-align: center;
+  padding-bottom: .3rem;
+}
+
+#form-description > p {
+  font-size: 1.2rem;
+}
+
+#survey-form {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 0px 50px 0px;
+  margin: 10px auto;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 200;
+  color: var(--font-color-light); 
+  background-color: inherit;
+  border: none;
+  margin-left: 1rem;
+  flex-grow: 1; 
+  border-bottom: var(--font-color-light) solid 1px;
+  border-right: transparent solid 2px;
+  transition: color 250ms linear, background 250ms linear, border 250ms linear;
+}
+
+/* For chrome */
+input::placeholder {
+  color: var(--font-color-light);
+}
+
+/* For firefox */
+::placeholder {
+  opacity: 1;
+}
+
+input:focus, textarea:focus, select:focus {
+  background: #444;
+  color: var(--font-color);
+  border-bottom-color: var(--font-color);
+}
+
+input:valid:not(:focus),
+select:valid:not(:focus),
+textarea:valid:not(:focus) {
+  color: var(--font-color);
+  font-weight: 400;
+}
+
+.input-group {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 1.2rem;
+  color: var(--font-color);
+}
+
+.input-group > label {
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+
+.input-group:last-of-type {
+  margin-bottom: 40px;
+}
+
+select:focus > option:hover {
+  background: #444;
+}
+
+option {
+  background: var(--background-color);
+  border: none;
+}
+
+.radio-group > label:hover, .checkbox-group > label:hover {
+  color: var(--font-color);
+}
+
+.radio-group > input:checked + label, .checkbox-group > input:checked + label {
+  color: var(--font-color);
+  font-weight: 400;
+}
+
+#walking-opinion, #destinations {
+  box-sizing: border-box;
+  flex-grow: 1;
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.instruction {
+  display: block;
+  font-weight: 200;
+  font-size: .8em;
+}
+
+.instruction::before {
+  content: "["
+}
+
+.instruction::after {
+  content: "]"
+}
+
+.radio-group > label, .checkbox-group > label {
+  display: inline-block;
+  box-sizing: border-box;
+  border-right: solid 2px transparent;
+  border-bottom: solid 1px transparent;
+  color: var(--font-color-light);
+  transition: border 200ms linear, color 200ms linear;
+}
+
+.radio-group > input, .checkbox-group > input {
+  display: none;
+}
+
+/* HIDE NUMBER SPINNER AND DROPDOWN ARROW */
+input[type='number'], select {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+textarea::placeholder {
+  color: var(--font-color-light);
+  font-weight: 200;
+}
+
+.submit-button {
+  box-sizing: border-box;
+  border: solid 1px var(--font-color);
+  background: var(--background-color);
+  color: var(--font-color);
+  font-family: inherit;
+  font-size: 1.5rem;
+  padding: .4rem 1rem;
+  margin: auto;
+  border-radius: .4rem;
+  font-weight: 400;
+  transition: 180ms linear all;
+}
+
+.submit-button:hover, .submit-button:focus {
+  background-color: var(--font-color);
+  color: var(--background-color);
+}
+
+@media (max-width: 599px) {
+  body {
+    padding: 0px 15px 0px 15px;
+  }
+  #form-description, #survey-form {
+    width: 100%;
+  }  
+  
+  .input-group {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 1.6rem 0;
+  }
+  
+  .input-group > label {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 0.8rem;
+  }
+  
+  input, select, #walking-opinion, #destinations, textarea {
+    align-self: flex-end;
+    text-align: right;
+  }
+  
+  input, select, textarea {
+    width: 90%;
+  }
+ 
+  .radio-group > input:checked + label, .checkbox-group > input:checked + label {
+    border-right-color: var(--font-color);
+  }
+
+  .radio-group > label, .checkbox-group > label {
+    padding-right: 15px;
+    width: 10rem;
+  }
+  
+  .radio-group, .checkbox-group {
+    margin: .2rem 0;
+  }
+  
+  #walking-opinion, #destinations {
+    justify-content: flex-end;
+  }
+  
+  input:valid:not(:focus),
+  select:valid:not(:focus),
+  textarea:valid:not(:focus) {
+    border-right-color: var(--font-color);
+    padding-right: 10px;
+    border-bottom-color: transparent;
+  }
+}
+
+@media (min-width: 600px) {
+  input:valid:not(:focus),
+  select:valid:not(:focus),
+  textarea:valid:not(:focus) {
+    border-bottom-color: var(--font-color);
+  }
+  
+  .input-group > label {
+    text-align: right;
+    width: 48%;
+    box-sizing: border-box;
+    margin-right: 2%;    
+  }
+  
+  .radio-group > input:checked + label, .checkbox-group > input:checked + label {
+    border-bottom-color: var(--font-color);
+  }
+
+  .input-group {
+    margin: 1rem 0;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 899px) {
+  #form-description, #survey-form {
+    width: 100%;
+  }
+}
+
+@media (min-width: 900px) {
+  #form-description, #survey-form {
+    width: 80%;
+    margin: auto;
+  }
+}

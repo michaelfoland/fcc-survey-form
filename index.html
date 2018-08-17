@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,700" rel="stylesheet"> 
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div id="form-description">
+      <h1 id="title">Walking Survey</h1>
+      <p id="description">Help us learn more about your walking habits</p>
+    </div>
+    <form id="survey-form">
+      <!-- NAME -->
+      <div class="input-group">
+        <label id="name-label" for="name">Name: </label>
+        <input type="text" name="name" id="name" placeholder="Full name" required>
+      </div>
+
+      <!-- EMAIL -->
+      <div class="input-group">
+        <label for="email" id="email-label">Email: </label>
+        <input type="email" name="email" id="email" placeholder="Email" required>
+      </div>   
+      
+      <!-- HOURS -->
+      <div class="input-group">
+        <label id="number-label" for="walking-time">How many hours do you walk in a week? <span class="instruction">maximum 50 hours</span></label>
+        <input type="number" name="walking-time" id="walking-time" placeholder="Hours spent walking" min="0" step="1" max="50" required>
+      </div>
+
+      <!-- TRANSPORT -->
+      <div class="input-group">
+        <label for="main-transportation">What is your main mode of transportation?</label>
+        <select id="main-transportation" required>
+          <option disabled selected value>-- select one --</option>
+          <option value="car">car </option>
+          <option value="bus">bus </option>
+          <option value="subway">subway </option>
+          <option value="bike">bike </option>
+          <option value="taxi">taxi </option>
+          <option value="walking">walking </option>
+          <option value="other">other </option>
+        </select>
+      </div>
+      
+      <!-- RADIO BUTTONS -->
+      <div class="input-group">
+        <label for="walking-opinion">Walking is...<span class="instruction">check one</span></label>
+        <div id="walking-opinion">
+          <div class="radio-group" tabindex="0">
+            <input type="radio" id="walking-exhilarating" value="exhilarating" name="walking-opinion">
+            <label for="walking-exhilarating">exhilarating</label>
+          </div>
+            
+          <div class="radio-group" tabindex="0">
+            <input type="radio" id="walking-enjoyable" value="enjoyable" name="walking-opinion">
+            <label for="walking-enjoyable">enjoyable</label>
+          </div>
+          
+          <div class="radio-group" tabindex="0">
+            <input type="radio" id="walking-troublesome" value="troublesome" name="walking-opinion">
+            <label for="walking-troublesome">troublesome</label>
+          </div>
+          
+          <div class="radio-group" tabindex="0">
+            <input type="radio" id="walking-horrid" value="horrid" name="walking-opinion">
+            <label for="walking-horrid">horrid</label>
+          </div>          
+        </div>
+      </div>      
+
+      <!-- RADIO BUTTONS -->
+      <div class="input-group">
+        <label for="destinations">Which of these places are within walking distance of your home? <span class="instruction">check as many as apply</span></label>
+        <div id="destinations">
+          <div class="checkbox-group" tabindex="0">
+            <input type="checkbox" id="work" value="work">
+            <label for="work">work</label>
+          </div>
+
+          <div class="checkbox-group" tabindex="0">
+            <input type="checkbox" id="grocery" value="grocery">
+            <label for="grocery">grocery</label>
+          </div>
+
+          <div class="checkbox-group" tabindex="0">
+            <input type="checkbox" id="park" value="park">
+            <label for="park">park</label>
+          </div>
+
+          <div class="checkbox-group" tabindex="0">
+            <input type="checkbox" id="restaurants" value="restaurants">
+            <label for="restaurants">restaurants</label>
+          </div>
+
+          <div class="checkbox-group" tabindex="0">
+            <input type="checkbox" id="library" value="library">
+            <label for="library">library</label>
+          </div>
+        </div>
+      </div>
+      
+      <!-- TEXTAREA -->
+      <div class="input-group">
+        <label for="comments">Tell us one change in your environment that would encourage you to walk more.</label>
+        <textarea id="comments" placeholder="Your comments are appreciated..." rows="3" required></textarea>
+      </div>
+      
+      <button type="submit" href="#" class="submit-button">Submit</button>
+    </form>
+    
+    <script src="script.js"></script>
+  </body>
+</html>
