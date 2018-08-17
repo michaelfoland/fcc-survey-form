@@ -1,7 +1,8 @@
 :root {
   --font-color: #f65;
   --font-color-light: #f54b;
-  --background-color: #333;
+  --background-color: #222;
+  --background-color-light: #333;
 }
 
 div {
@@ -58,7 +59,7 @@ input::placeholder {
 }
 
 input:focus, textarea:focus, select:focus {
-  background: #444;
+  background: var(--background-color-light);
   color: var(--font-color);
   border-bottom-color: var(--font-color);
 }
@@ -89,7 +90,7 @@ textarea:valid:not(:focus) {
 }
 
 select:focus > option:hover {
-  background: #444;
+  background: var(--background-color-light);
 }
 
 option {
@@ -174,6 +175,7 @@ textarea::placeholder {
 .submit-button:hover, .submit-button:focus {
   background-color: var(--font-color);
   color: var(--background-color);
+  cursor: pointer;
 }
 
 @media (max-width: 599px) {
